@@ -20,7 +20,7 @@ def estimate_split(hourly_consumption, capacity_split, source_priorities):
         capacity_split: dataframe containing the columns ['date', 'month', 'total_capacity'] and capacity per power source
         priority: dictionary, key = 1, 2, 3..., values = power source
     returns:
-        data frame 
+        data frame with production per source (MW) 
     """
     df = hourly_consumption.merge(capacity_split, on='month')
     
@@ -31,6 +31,7 @@ def estimate_split(hourly_consumption, capacity_split, source_priorities):
     df[prod_cols] = pd.DataFrame(columns=prod_cols)
     
     df = df.apply(production_split, axis=1)
+    df[prod_cols] = df[prod_cols].apply(lambda x: round(x))
     return df[['month','datetime', 'timestamp', 'zone_name', 'total_consumption_average']+prod_cols]
 
 

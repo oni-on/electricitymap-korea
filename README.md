@@ -14,7 +14,7 @@ http://epsis.kpx.or.kr/epsisnew/selectEkpoBftChart.do?menuId=020100) of power ge
 ## Naive Estimation
 Assume that production will match the maximum capacity for all plants except the marginal one. In the example below, renewable sources and nuclear plants would produce at full capacity which leads to coal production being the following:
 
-$$coal = total - renewable - nuclear$$
+coal = total - renewable - nuclear
 
 <img src="https://www.tmrow.com/static/9ac35e5c7a5e8c445425664447e809a5/20def/merit-order-curve.png" title="https://www.tmrow.com/static/9ac35e5c7a5e8c445425664447e809a5/20def/merit-order-curve.png">_Source: [Tomorrow Blog](https://www.tmrow.com/static/9ac35e5c7a5e8c445425664447e809a5/20def/merit-order-curve.png)_
 
@@ -35,7 +35,7 @@ python src/korea.py
 
 
 ## Discussion and Outlook
-The assumption that all renewable sources will operate at full capacity is quite naive given the dependency on factors such as weather conditions.
+The assumption that all renewable sources will operate at full capacity is quite naive given the dependency on factors such as weather conditions. It also leads to renewable  and nuclear power being constant values over time. It would probably be more accurate to multiply the hourly forecasted power by a constant yearly percentage per energy source (e.g. reported [here](http://epsis.kpx.or.kr/epsisnew/selectEkesKepChart.do?menuId=010100&locale=eng )).
 
 If I had more time, I would build a model that estimates solar power (other renewable sources such as wind are negligible in South Korea). Weather features such as temperature, visibility, cloud coverage, wind speed etc could be used to predict solar power. 
 
