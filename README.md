@@ -34,14 +34,20 @@ python src/korea.py
 ```
 
 
-## Outlook
+## Discussion and Outlook
+The assumption that all renewable sources will operate at full capacity is quite naive given the dependency on factors such as weather conditions.
+
+If I had more time, I would build a model that estimates solar power (other renewable sources such as wind are negligible in South Korea). Weather features such as temperature, visibility, cloud coverage, wind speed etc could be used to predict solar power. 
+
+The solar power model would have to be built using _target/actual_ data from a "similar" geographical area, due to the lack of _targets_ for solar power Korea. 
+
+
 
 ## Sources
 Yearly production by source (hydro, thermal, nuclear, renewable) until 2019
-Assign renewable to solar? Aggregate renewables on the yearly level after estimation and use this source for validation
 http://epsis.kpx.or.kr/epsisnew/selectEkesKepChart.do?menuId=010100&locale=eng 
 
 Energy consumption breakdown by source until 2018
 http://epsis.kpx.or.kr/epsisnew/selectEkesKedChart.do?menuId=010400&locale=eng
 
-Split till 2018 http://cms.khnp.co.kr/content/163/main.do?mnCd=FN05040101
+Split of capacity by source until 2018 (nuclear, coal, gas, renewable, oil, positive number??) http://cms.khnp.co.kr/content/163/main.do?mnCd=FN05040101
