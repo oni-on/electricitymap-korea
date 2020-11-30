@@ -24,7 +24,7 @@ def estimate_split(hourly_consumption, capacity_split, source_priorities):
     """
     df = hourly_consumption.merge(capacity_split, on='month')
     
-    energy_sources = list(source_priorities.values())[0]+list(source_priorities.values())[1:]
+    energy_sources = sorted(list(source_priorities.values())[1:]+list(source_priorities.values())[0])
 
     prod_cols = ['power_production_'+source+'_avg' for source in energy_sources]
     
@@ -148,4 +148,5 @@ if __name__ == "__main__":
     
     df_final = estimate_split(df_prod, df_fuel, SOURCE_PRIORITY)
     df_final.drop('month', inplace=True, axis=1)
+    df_final = df_final.sort_values('timestamp')
     df_final.to_csv('./data/output/hourly_production_by_source_KR_2019.csv', index=False)

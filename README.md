@@ -39,8 +39,7 @@ The assumption that all renewable sources will operate at full capacity is quite
 
 If I had more time, I would build a model that estimates solar power (other renewable sources such as wind are negligible in South Korea). Weather features such as temperature, visibility, cloud coverage, wind speed etc could be used to predict solar power. 
 
-The solar power model would have to be built using _target/actual_ data from a "similar" geographical area, due to the lack of _targets_ for solar power Korea. 
-
+The solar power model would have to be built using _target/actual_ data from a "similar" geographical area, due to the lack of _targets_ for solar power Korea. The weather features scraped for Korea could then be used to predict solar power in KR using the model built for a similar country (e.g. like [here](https://github.com/ColasGael/Machine-Learning-for-Solar-Energy-Prediction/blob/master/cs229_final_report.pdf)).  
 
 
 ## Sources
